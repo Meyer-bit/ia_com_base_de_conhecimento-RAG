@@ -27,4 +27,52 @@ A aplicação implementa um fluxo simples de **RAG (Retrieval-Augmented Generati
 
 Caso a resposta não esteja presente na base de conhecimento, a aplicação informa que não possui essa informação.
 
+---
+
+## 📚 Base de Conhecimento
+
+A pasta `base/` contém PDFs com conteúdos introdutórios sobre:
+
+- 🐍 **Python básico**
+- 🌱 **Git e GitHub**
+- 🐳 **Docker (conceitos iniciais)**
+- 🌐 **APIs REST**
+- 🗄️ **SQL básico**
+
+Esses temas foram escolhidos por serem fundamentais para desenvolvimento backend e aplicações de IA.
+
+---
+
+## ⚙️ Funcionamento Técnico
+
+### 1️⃣ Criação do Banco Vetorial (`criar_db.py`)
+
+- Carrega todos os PDFs da pasta `base`
+- Divide os textos em pequenos blocos (*chunks*)
+- Gera embeddings utilizando a API da OpenAI
+- Armazena os embeddings no **ChromaDB**
+
+Esse processo simula como bases de conhecimento são criadas em sistemas reais de IA.
+
+---
+
+### 2️⃣ Consulta à IA (`central.py`)
+
+- O usuário digita uma pergunta
+- A aplicação realiza uma **busca semântica** no banco vetorial
+- Os trechos mais relevantes são enviados ao modelo de linguagem
+- A resposta é gerada com base **somente no contexto recuperado**
+
+Esse padrão reduz respostas genéricas e evita alucinações do modelo.
+
+---
+
+## 🧩 Tecnologias Utilizadas
+
+- **Python**
+- **LangChain**
+- **OpenAI API**
+- **ChromaDB (Vector Store)**
+- **dotenv**
+- **Conceitos de RAG (Retrieval-Augmented Generation)**
 
