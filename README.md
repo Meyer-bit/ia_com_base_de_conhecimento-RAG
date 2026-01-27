@@ -1,4 +1,4 @@
-# IA com Base de Conhecimento (RAG)
+# Agente de IA com Base de Conhecimento (RAG)
 
 ## 📌 Visão Geral
 
